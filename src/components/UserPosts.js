@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {useNavigate, useLocation, createSearchParams} from "react-router-dom";
 import {getQuery} from "../utilities/util";
+import Loader from "./Loader";
 
 export default function UserPosts(props){
     const [authorData, setAuthorData] = useState([]);
@@ -84,7 +85,6 @@ export default function UserPosts(props){
             })}`
         });
         setQueryParams(Object.assign({}, queryParams, {start: start}));
-        // navigationDisabler();
     }
 
     const filterPosts = ()=>{
@@ -113,6 +113,14 @@ export default function UserPosts(props){
                     postId: id
                 })}`
             });
+    }
+
+    if(!isUserPostsLoaded){
+        return(
+            <>
+            <Loader/>
+            </>
+        )
     }
     
     return(

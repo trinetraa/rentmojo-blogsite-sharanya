@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {useNavigate, useLocation, createSearchParams} from "react-router-dom";
 import {getQuery} from '../utilities/util';
 import Comments from "./Comments";
+import Loader from "./Loader";
 
 export default function PostDetails(){
     const [postDetails, setPostDetails] = useState([]);
@@ -11,6 +12,7 @@ export default function PostDetails(){
     const {search} = useLocation();
     const [queryParams, setQueryParams] = useState(getQuery(search));
     const navigate = useNavigate();
+    const [isPostDeleted, setIsPostDeleted] = useState(true)
 
     useEffect(()=>{
         getPostDetails(queryParams.postId);
@@ -44,10 +46,12 @@ export default function PostDetails(){
 
     const deletePost = async ()=>{
         try {
+            setIsPostDeleted(false);
             if(confirm("Do you want to delete this post?")){
                 const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${queryParams.postId}`, {
                 method: "DELETE"
             })
+            setIsPostDeleted(true);
             alert("The post has been deleted successfully.");
             navigate({
                 pathname: '../user-posts',
@@ -67,9 +71,9 @@ export default function PostDetails(){
 
     if(!isPostLoaded){
         return(
-            <div className="post-details">
-                <h1 className="post-heading">Loading</h1>
-            </div>
+            <>
+            <Loader/>
+            </>
         )
     }
     else{
@@ -84,6 +88,14 @@ export default function PostDetails(){
                     setIsCommenetsLoaded(false);
                 }}>Hide Comments</button>
                 <button className="delete-post" onClick={deletePost}>Delete Post</button>
+                {
+                    (!isPostDeleted) && (
+                    <div className="delete-loader">
+                        <Loader/>
+                    </div>  
+                    )
+                }
+                
                 <div className="comments-container">
                     <h4 className="comments-header">Comments
                     </h4>

@@ -1,0 +1,33 @@
+$table-border:#fc7b83;
+
+
+.user-table{
+    max-width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    .table-header{
+        border-bottom: 2px solid $table-border;
+       font-size: 23px;
+       font-weight: bold;
+    }
+    .table-rows{
+        line-height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .user-table{
+        width: 90%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .user-table{
+        width: 940px;
+    }
+}
+
+.no-records{
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -1,8 +1,8 @@
 export default function Comments(props){
     return(
     <div className="users-comment">
-        <h4 className="commenter-name">{props.name}</h4>
-        <p className="commenter-email">{props.email}</p>
+        <b><p className="commenter-name">{props.name}</p></b>
+        <small><p className="commenter-email">{props.email}</p></small>
         <p className="comment-content">{props.body}</p>
     </div>
     )

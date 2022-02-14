@@ -1,0 +1,68 @@
+$comment-border:#fc7b83;
+$no-results: black;
+$contrast-color: white;
+$dark-inner-background:#606368;
+
+.post-details-container{
+    padding: 5px;
+}
+.comments-container{
+    text-align: left;
+    padding-left: 15px;
+}
+
+.post-container{
+    padding: 3px 3%;
+    background: pink;
+    border-radius: 15px;
+}
+
+.post-details{
+    background: white;
+    border-radius: 15px;
+}
+
+.users-comment{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px;
+    border: 2px solid $comment-border;
+}
+
+.details-button{
+    width: 115px;
+    height: 55px;
+    font-size: 15px;
+    background: #fc94a4;
+    color: white;
+    border-radius: 7px;
+    margin-top:10px;
+}
+
+@media screen and (min-width: 1200px) {
+    .post-details{
+        padding: 0px 25%;
+    }
+    .post-details-container{
+        max-width: 1000px;
+        margin: 0px auto;
+     }
+ }
+
+ .no-results {
+     color: $no-results;
+    text-align: center;
+ }
+
+ .dark{
+     .post-details-container{
+         .comments-container{
+             .no-results{
+                 color: $contrast-color;
+             }
+         }
+         .post-details{
+             background: $dark-inner-background;
+         }
+     }
+ }

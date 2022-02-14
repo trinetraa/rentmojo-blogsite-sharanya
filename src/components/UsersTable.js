@@ -1,4 +1,5 @@
 import {useNavigate, createSearchParams} from "react-router-dom";
+import '../styles/UsersTable.scss';
 export default function UsersTable(props){
     const navigate = useNavigate();
     const goToUserPosts = ()=>{

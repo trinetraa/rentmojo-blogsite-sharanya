@@ -1,15 +1,89 @@
+$button-colour:#fc94a4;
+$button-text: white;
+$background: white;
+$primary: black;
+$text-field:white;
+
+$dark-button-colour:#b64fc8;
+$dark-button-text: white;
+$dark-background: #3c4042;
+$dark-primary: white;
+$dark-text-field:#606368;
+
+
 .App {
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  height: inherit;
+  min-height: 100vh;
+
+
+  .filters {
+    display: flex;
+  }
+  
+  .user-post {
+    display: flex;  
+  }
+  
+  .loader {
+    margin: auto;
+  }
+  
+  .filters{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    .filter{
+        width: 45%;
+        padding: 10px 3% ;
+        margin: 5px;
+    }
+    @media screen and (min-width: 768px) {
+        .filter{
+            width: 30%;
+            max-width: 320px;
+        }
+    }
+    .input-field{
+        width: 100%;
+        padding: 10px;
+        border-radius: 7px;
+        border: 3px solid black;
+        background: $text-field;
+    }
+    
+  }
+  
+  .users-blog-link{
+    background: $button-colour;
+    color: $button-text;
+    width: 85px;
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 15px;
+  
+  }
+.theme-switcher{
+  text-align: right;
+  margin-right: 25px;
+  .mode-toggle{
+    background: #fc94a4;
+    width: 120px;
+    color: white;
+    padding: 10px;
+    border-radius: 14px;
+  }
+}
 }
 
-.filters {
-  display: flex;
-}
 
-.user-post {
-  display: flex;  
+.light{
+  background: $background;
+  color: $primary;
 }
-
-.loader {
-  margin: auto;
+.dark{
+  background: $dark-background;
+  color: $dark-primary;
 }

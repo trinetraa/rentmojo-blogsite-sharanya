@@ -1,0 +1,111 @@
+$post-background: #fcccd4;
+$post-border: #fc7b83;
+$main-border: #fcc3c3;
+$contrast-background: white;
+$inner-background:#fc94a4;
+
+$dark-inner-background:#606368;
+$contrast-color:white;
+.users-blog-link{
+    height: 40px;
+    margin: 0px auto;
+}
+.post-list-container{
+    padding: 2%;
+    padding-right: 6%;
+    margin: 2%;
+}
+
+.posts-list{
+    width: 95%;
+    margin: 0px auto;
+    padding: 5%;
+    border: 1px solid $main-border;
+    border-radius: 15px;
+    background-color: $post-background;
+}
+
+.user-post{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $post-border;
+    padding: 10px;
+    margin: 30px;
+    background: $contrast-background;
+}
+.nav-buttons{
+    padding-bottom:80px ;
+}
+
+@media screen and (min-width: 768px) {
+    .prev-next{
+        float: right;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .post-list-container{
+        max-width: 850px;
+        padding: 2%;
+        padding-right: 4%;
+        border-radius: 15px;
+        margin: 0px auto;
+    }
+    .nav-buttons{
+        max-width: 850px;
+        padding-bottom:80px ;
+        padding-right: 4%;
+        margin: 0px auto;
+    }
+    .prev-next{
+        float: right;
+        margin-right: 50px;
+    }
+}
+ .home {
+    float: left;
+    margin-left: 50px;
+    width: 115px;
+    height: 30px;
+    font-size: 15px;
+    background: $inner-background;
+    color: $contrast-background;
+    border-radius: 7px;
+ }
+
+ .prev-next{
+    padding: 0px 5px;
+    width: 115px;
+    height: 30px;
+    font-size: 15px;
+    background: $inner-background;
+    color: $contrast-background;
+    border-radius: 7px;
+ }
+
+
+ @media screen and (min-width: 768px) {
+    .prev-next{
+        padding: 0px 20px;
+     }
+ }
+
+.no-results{
+    color: $contrast-background;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.dark{
+    .user-posts-container{
+        .post-list-container{
+            .posts-list{
+                .user-post{
+                    background: $dark-inner-background;
+                    color: $contrast-color;
+                }
+            }
+        }
+    }
+}
